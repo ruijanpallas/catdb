@@ -1,11 +1,11 @@
 class CatsController < ApplicationController
   
   def index
-    @posts = Post.all
+    @cats = Cat.all
   end
 
   def show
-   @post = Post.friendly.find(params[:id])
+   @cat = Cat.first
   end
   
 end
