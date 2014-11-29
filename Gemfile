@@ -44,3 +44,12 @@ gem 'devise'
 
 # pretty URLs
 gem 'friendly_id', '~> 5.0.0'
+
+# meta-data management
+gem 'metamagic'
+
+# uploader functionality for forms
+gem 'carrierwave'
+
+# create dynamic thumbnails on the fly, must `:require => false` to avoid infinite loop
+gem 'rmagick', :require => false
