@@ -38,3 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# ActiveAdmin and shivs
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+
+# pretty URLs
+gem 'friendly_id', '~> 5.0.0'
