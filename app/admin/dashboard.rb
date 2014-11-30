@@ -4,10 +4,16 @@ ActiveAdmin.register_page "Dashboard" do
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+      section "Cats" do
+        table_for Cat.order("created_at desc").limit(3) do
+          column("Name"){|cat| link_to(cat.name, admin_cat_path(cat)) }
+          column :race
+          column :created_at
+        end
+        strong {link_to "Manage Cats", admin_cats_path}
+        br br
       end
+      
     end
 
     # Here is an example of a simple dashboard with columns and panels.
