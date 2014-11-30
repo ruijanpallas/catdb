@@ -1,12 +1,14 @@
 ActiveAdmin.register Cat do
 
-  permit_params :name, :color, :picture, :race, :gender
+  permit_params :name, :colour, :picture, :race, :gender
 
     # this index call specifies which properties will be visible in the listing of all Cats within admin
   index do
     column :name
-    column :race
+    column :colour
     column :picture
+    column :race
+    column :gender
     column :created_at
     actions
   end
@@ -16,7 +18,7 @@ ActiveAdmin.register Cat do
     attributes_table do
       row :id
       row :name
-      row :color
+      row :colour
       row :race
       row :gender
       row :picture do
@@ -31,7 +33,7 @@ ActiveAdmin.register Cat do
   form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs "Details" do
       f.input :name
-      f.input :color
+      f.input :colour, :label => 'Color'
       f.input :race
       f.input :gender
     end   
