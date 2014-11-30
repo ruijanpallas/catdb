@@ -1,4 +1,5 @@
 ActiveAdmin.register Cat do
+  menu :priority => 1
 
   permit_params :name, :colour, :picture, :race, :gender
 
