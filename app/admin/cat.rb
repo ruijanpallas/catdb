@@ -5,14 +5,12 @@ ActiveAdmin.register Cat do
 
     # this index call specifies which properties will be visible in the listing of all Cats within admin
   index do
-    table_for Cat.order("name asc") do
       column("Name"){|cat| link_to(cat.name, admin_cat_path(cat)) }
       column("Color"){|cat| cat.colour}
       column("Picture"){|cat| image_tag(cat.picture.url(:thumb))}
       column :race
 	  column :gender
       actions
-    end
   end
   
   # this should customize the layout for a single-cat page
